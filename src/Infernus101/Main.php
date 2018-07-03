@@ -26,7 +26,7 @@ use onebone\economyapi\EconomyAPI;
 class Main extends PluginBase implements Listener{
     public $db;
 	public function onEnable(){
-    $this->getLogger()->info("§b§lLoaded Bounty by Zeao succesfully.");
+    $this->getLogger()->info("§b§lLoaded Bounty");
 		$files = array("config.yml");
 		foreach($files as $file){
 			if(!file_exists($this->getDataFolder() . $file)) {
@@ -164,14 +164,14 @@ class Main extends PluginBase implements Listener{
 		   $lower = strtolower($invited);
 		   $name = strtolower($sender->getName());
 		   if($lower == $name){
-			   $sender->sendMessage("§6[BOUNTY]> §dYou cannot place bounties on yourself!");
+			   $sender->sendMessage("§8§l(§6BOUNTY§8)§r > §dYou cannot place bounties on yourself!");
 			   return true;
 			   break;
 		   }
 		    $playerid = $this->getServer()->getPlayer($lower);
 			$money = $args[2];
 		   if(!$playerid instanceof Player) {
-			   $sender->sendMessage("§6[BOUNTY]> §dPlayer not found!");
+			   $sender->sendMessage("§8§l(§6BOUNTY§8)§r > §dPlayer not found!");
 			   return true;
 			   break;
 		   }
@@ -182,7 +182,7 @@ class Main extends PluginBase implements Listener{
 		   }
 		   $min = $this->cfg->get("min_bounty");
 		   if($money < $min){
-			  $sender->sendMessage("§6[BOUNTY]> §dMoney has to be more than $min"."$");
+			  $sender->sendMessage("§8§l(§6BOUNTY§8)§r > §dMoney has to be more than $min"."$");
 			  return true;
 			  break;
 		   }
@@ -199,14 +199,14 @@ class Main extends PluginBase implements Listener{
 		   }else {
 						switch($fail){
 							case EconomyAPI::RET_INVALID:
-								$sender->sendMessage("§6[BOUNTY]> §5You do not have enough money to set that bounty!");
+								$sender->sendMessage("§8§l(§6BOUNTY§8)§r > §5You do not have enough money to set that bounty!");
 								return false;
 								break;
 							case EconomyAPI::RET_CANCELLED:
-								$sender->sendMessage("§bBOUNTY> §6ERROR!");
+								$sender->sendMessage("§8§l(§6BOUNTY§8)§r > §6ERROR!");
 								break;
 							case EconomyAPI::RET_NO_ACCOUNT:
-								$sender->sendMessage("§bBOUNTY> §6ERROR!");
+								$sender->sendMessage("§8§l(§6BOUNTY§8)§r > §6ERROR!");
 								break;
 						}
 					}
@@ -268,7 +268,7 @@ class Main extends PluginBase implements Listener{
 		        return true; 
 		    break;
 		   case "about":
-		    $sender->sendMessage("§5Bounty v2.0.1 by §aVMPE Development Team §eThis plugin was bought to you by §6Void§bFactions§cPE! §aOur server IP: §cvoidfactionspe.ml Port - 19132");
+		    $sender->sendMessage("§bBounty v2.0.1");
 		   return true; 
 		   break;   
 		   default:
