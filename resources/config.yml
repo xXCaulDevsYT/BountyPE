@@ -1,7 +1,7 @@
 ---
 # CONFIG V3.0
 # Minimum bounty which could be set on a player
-min_bounty: 10000
+min_bounty: 300
 # Server Broadcast status. 1 = Enabled, 0 = Disabled.
 bounty_broadcast: 1
 # Bounty stats to show on nametag. 1 = Enabled, 0 = Disabled.
