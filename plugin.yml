@@ -1,9 +1,9 @@
 name: Bounty
-api: [3.0.0-ALPHA9, 3.0.0-ALPHA10, 3.0.0-ALPHA11, 3.0.0-ALPHA12]
+api: [3.0.0]
 main: Infernus101\Main
 version: 2.0.1
-author: infernsu
-description: Bounty plugin for Faction servers.
+author: Infernus101
+description: Bounty plugin
 commands:
   bounty:
     description: "Bounty help"
