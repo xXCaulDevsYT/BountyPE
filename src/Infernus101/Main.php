@@ -110,7 +110,7 @@ class Main extends PluginBase implements Listener{
             $player->setNameTag("§a$username §c".$player->getHealth()."§f/§c".$player->getMaxHealth());
         }
         if($this->cfg->get("bounty_stats") == 1 && $this->cfg->get("health_stats") == 1){
-            $player->setNameTag("§a$username §c".$player->getHealth()."§f/§c".$player->getMaxHealth()."\n§eBounty: §6$bounty"."$");
+            $player->setNameTag("§7§l»§r§c $username §7(§e$§6$bounty§7)\n§l§fHP§r §c".$player-getHealth()."§7/§c".$player->getMaxHealth()."\n§2Season: §a1");
         }
     }
     public function onDeath(PlayerDeathEvent $event) {
